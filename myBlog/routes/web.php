@@ -23,3 +23,5 @@ Route::get('main', function () {
 Route::get('about','PagesController@getAbout');
 Route::get('contact','PagesController@getcontact');
 Route::get('hello','PagesController@getHello');
+
+Route::resource('posts','PostController');
