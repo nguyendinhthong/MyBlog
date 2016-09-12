@@ -13,10 +13,11 @@
  	}
  	public function getAbout()
  	{
- 			return view('pages/about'); 		
+ 		$full="Nguyen Dinh Thong";
+ 		return view('pages/about')->with("fullname",$full)->withEmail("tnd@gmail.com"); 		
  	}
  	public function getContact()
- 	{		return view('pages.contact'); 		
+ 	{	return view('pages.contact'); 		
  	}
  	
  	public function postContact()
