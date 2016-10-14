@@ -164,6 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -178,6 +179,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+       // Clockwork\Support\Laravel\ClockworkServiceProvider::class,
+
 
     ],
 
