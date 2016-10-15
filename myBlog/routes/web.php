@@ -25,3 +25,4 @@ Route::get('contact','PagesController@getcontact');
 Route::get('hello','PagesController@getHello');
 
 Route::resource('posts','PostController');
+Route::get('index1','PostController@index1');

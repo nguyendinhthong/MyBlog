@@ -50,7 +50,7 @@
 								
 
 				<br>
-				Back: {!!echo back()->withInput();!!}
+				Back: 
 			</div>
 		</div>
 	</div>

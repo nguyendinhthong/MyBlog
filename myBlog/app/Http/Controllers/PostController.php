@@ -18,15 +18,34 @@ class PostController extends Controller
     public function index(Request $request)
     {
         //create a variable and store all the blog posts in it form the database.
+                 
+        $posts = Post::findall()->paginate(3);
+
+        //return a view and pass in the above variable
+        return view('posts.index')->withPosts($posts);
+    }
+
+
+
+ public function index1(Request $request)
+    {
+        //create a variable and store all the blog posts in it form the database.
+        $temp=0;
         $inputs = $request->all();
+
+        //I input got filter -> put value to to session
         if (isset($inputs['filter'])) {
             $temp=$request->input('filter');
+            $request->session()->put('filter',$temp);
         }
+        //If no input the -> read from session
         else {
-            $temp=0;
+
+            $temp= $request->session()->get('filter');
         }
+     
         
-        $posts = Post::where('id','>',$temp)->paginate(5);
+        $posts = Post::where('id','>',$temp)->paginate(3);
 
 
         //return a view and pass in the above variable
@@ -44,6 +63,7 @@ class PostController extends Controller
         //
         return view('posts.create');
     }
+
 
     /**
      * Store a newly created resource in storage.
